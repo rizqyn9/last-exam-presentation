@@ -1,32 +1,25 @@
+import { Link } from "@remix-run/react";
+import { motion } from "framer-motion";
+
 export default function Index() {
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <h1>Welcome to Remix</h1>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
-        </li>
-      </ul>
-    </div>
+    <motion.div
+      className="w-full h-full grid place-content-center grid-cols-2 px-[10rem] gap-7"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
+      <h1 className="col-span-1 text-5xl">
+        Implementasi CI/CD Elephant In Rescue
+      </h1>
+      <motion.div className="place-self-end text-2xl pl-24 text-right">
+        Rizqy Prastya Ari Nugroho
+      </motion.div>
+
+      <div className="w-full flex items-end justify-end col-span-2">
+        <Link className="border rounded-full px-5" to="/pengertian">
+          Next
+        </Link>
+      </div>
+    </motion.div>
   );
 }
