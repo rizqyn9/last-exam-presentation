@@ -1,25 +1,27 @@
-import { Link } from "@remix-run/react";
-import { motion } from "framer-motion";
+import { Link } from "@remix-run/react"
+import { motion } from "framer-motion"
+import { Button } from "~/component/button"
 
 export default function Index() {
   return (
-    <motion.div
-      className="w-full h-full grid place-content-center grid-cols-2 px-[10rem] gap-7"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-    >
-      <h1 className="col-span-1 text-5xl">
-        Implementasi CI/CD Elephant In Rescue
-      </h1>
+    <>
+      <div className="col-span-1 text-5xl leading-[120%] flex flex-col gap-5 bg-red-200">
+        <div>
+          <h1>Implementasi</h1>
+          <h1>Continuous Integration Continuous Delivery</h1>
+        </div>
+        <h1>Elephant In Rescue</h1>
+      </div>
+
       <motion.div className="place-self-end text-2xl pl-24 text-right">
         Rizqy Prastya Ari Nugroho
       </motion.div>
 
-      <div className="w-full flex items-end justify-end col-span-2">
-        <Link className="border rounded-full px-5" to="/pengertian">
-          Next
+      <div className="w-full flex items-end justify-end col-span-2 bg-red-100">
+        <Link to="/pengertian">
+          <Button className="bg-white px-12 rounded-full py-2">Next</Button>
         </Link>
       </div>
-    </motion.div>
-  );
+    </>
+  )
 }
