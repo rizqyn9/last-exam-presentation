@@ -7,9 +7,11 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react"
-import { AnimatePresence } from "framer-motion"
+import React from "react"
+import Cursor from "./component/cursor"
 import Layout from "./component/layout"
 import tailwindCss from "./styles/tailwind.css"
+import useMouse from "beautiful-react-hooks/useMouse"
 
 export const links: LinksFunction = () => [
   { href: tailwindCss, rel: "stylesheet" },
@@ -23,6 +25,10 @@ export const links: LinksFunction = () => [
     rel: "stylesheet",
     href: "https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&family=Poppins:wght@200;400;600;800&display=swap",
   },
+  {
+    rel: "stylesheet",
+    href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap",
+  },
 ]
 
 export const meta: MetaFunction = () => ({
@@ -32,16 +38,22 @@ export const meta: MetaFunction = () => ({
 })
 
 export default function App() {
+  const ref = React.useRef<HTMLBodyElement>(null)
+
   return (
     <html lang="id">
       <head>
         <Meta />
         <Links />
       </head>
-      <body className="w-screen h-screen max-w-screen-lg overflow-hidden bg-slate-900 text-white font-sans relative container mx-auto flex flex-col">
+      <body
+        ref={ref}
+        className="w-screen h-screen overflow-hidden bg-slate-900 text-white font-sans relative flex flex-col"
+      >
         <Layout>
           <Outlet />
         </Layout>
+        <Cursor />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />

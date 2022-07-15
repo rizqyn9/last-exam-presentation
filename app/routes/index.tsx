@@ -13,7 +13,10 @@ export default function Index() {
         <h1>Elephant In Rescue</h1>
       </div>
 
-      <motion.div className="place-self-end text-2xl pl-24 text-right">
+      <motion.div
+        className="place-self-end text-2xl pl-24 text-right"
+        key="123123"
+      >
         Rizqy Prastya Ari Nugroho
       </motion.div>
 

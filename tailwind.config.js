@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       fontFamily: {
         serif: "EB Garamond",
+        primary: "'Space Grotesk', sans-serif",
       },
     },
   },
